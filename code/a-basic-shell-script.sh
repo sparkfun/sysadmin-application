@@ -18,4 +18,3 @@ if [ $? -eq 0 ]; then
 fi
 
 for i in $(grep -v '^#' /etc/shells); do count=$(grep -c $i /etc/passwd); echo "$i has $count users configured to use it as a shell."; done
-echo $TEMPVAR;
