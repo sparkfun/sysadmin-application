@@ -1,0 +1,69 @@
+cwray@storageserver03:~$ cat /proc/mdstat 
+Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+md1 : active raid6 sde1[1] sdj1[8](S) sdg1[4] sdf1[3] sdk1[9] sdi1[5] sdd1[0] sdh1[7] sdb1[6]
+      8790036480 blocks super 1.2 level 6, 512k chunk, algorithm 2 [8/8] [UUUUUUUU]
+
+
+cwray@storageserver03:~$ sudo mdadm --detail /dev/md1
+[sudo] password for cwray: 
+/dev/md1:
+        Version : 1.2
+  Creation Time : Wed Sep 11 00:01:59 2013
+     Raid Level : raid6
+     Array Size : 8790036480 (8382.83 GiB 9001.00 GB)
+  Used Dev Size : 1465006080 (1397.14 GiB 1500.17 GB)
+   Raid Devices : 8
+  Total Devices : 9
+    Persistence : Superblock is persistent
+
+    Update Time : Tue Feb  3 20:32:51 2015
+          State : clean 
+ Active Devices : 8
+Working Devices : 9
+ Failed Devices : 0
+  Spare Devices : 1
+
+         Layout : left-symmetric
+     Chunk Size : 512K
+
+           Name : fatass01:1  (local to host fatass01)
+           UUID : 23ea65c3:4c4d475b:5a727e42:73a5d32b
+         Events : 19600
+
+    Number   Major   Minor   RaidDevice State
+       0       8       49        0      active sync   /dev/sdd1
+       1       8       65        1      active sync   /dev/sde1
+       3       8       81        2      active sync   /dev/sdf1
+       5       8      129        3      active sync   /dev/sdi1
+       4       8       97        4      active sync   /dev/sdg1
+       9       8      161        5      active sync   /dev/sdk1
+       6       8       17        6      active sync   /dev/sdb1
+       7       8      113        7      active sync   /dev/sdh1
+
+       8       8      145        -      spare   /dev/sdj1
+cwray@fatass01:~$ 
+
+
+
+cwray@storageserver03:~$ cat /etc/fstab
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda1 during installation
+UUID=95a75757-4641-4c5d-9fea-f21b481264fa /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sda5 during installation
+UUID=a09ffd9f-9a0c-4097-a30f-c54a52c1e5ef none            swap    sw              0       0
+# raid mount md1
+UUID=ee7cf0a0-1922-401b-a1ae-6ec9261484c0        /mnt/md1            ext4        defaults        0        0
+# one big drive mount.
+UUID=e100a46d-6374-4243-8be7-4e3afe4914d0	/mnt/BEEFCAKE		ext4	defaults	0	0
+
+crontab -e
+0 4 * * 2 /usr/bin/rsync --log-file=/var/log/rsyncbackup --backup --backup-dir=`date +%Y.%m.%d.%s` -a /mnt/md1 /mnt/BEEFCAKE/ >/dev/null 2>&1
+
+
+
