@@ -1,0 +1,27 @@
+alias show="cat .profile | grep alias"
+
+alias s="ssh"
+alias t="telnet"
+alias p="ping"
+alias d="dig"
+alias dx="dig -x"
+alias wis="whois"
+alias j='jlogin'
+alias c="clogin"
+alias jusr="tail /syslog/(some vender).log -f | egrep User"
+alias gson="tail /syslog/(some vender) -f | egrep so-"
+alias .net="c (REDACTED)"
+alias ll='ls -lah'
+alias nlan="ssh (redacted)"
+
+PATH=$PATH:$HOME/bin:/home/cwray/cvs/dsg_scripts
+LD_LIBRARY_PATH=/usr/lib/oracle/11.2/client64/lib
+
+LOGNAME=cwray
+MAIL=/usr/mail/cwray
+USER=cwray
+HOME=/home/cwray
+TZ=US/Mountain
+COLUMNS=250
+set history = 2000
+LS_COLORS="$LS_COLORS:di=00;33"
