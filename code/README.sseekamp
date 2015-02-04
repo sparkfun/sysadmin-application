@@ -1,0 +1,18 @@
+The lunmap utilities I wrote to map LUN ID's from the storage array to the OS device name in AIX. I originally wrote in Perl and then Python:
+
+lunmap.pl
+lunmap.py
+
+Self explanatory:
+mkhomedir.pl
+
+Ganglia monitoring tool has a utility to pass user defined data for graphing. This allows creation of RRD graphs very easily. I wrote the next two scripts to monitor oracle memory usage and Squid proxy cache ratios:
+
+oracle_gmetric.sh
+squid_gmetric.sh
+
+The next three file are part of the LDAP environment I built. We have stub user accounts in the OpenLDAP system that have pass-through authentication to AD. This allows us to use a vanilla AD domain, but not miss out on the Unix/App custom LDAP attributes. I created a custom AIX client schema to duplicate IBM's commercial product and wrote a small plug-in for our Splunk monitoring to look up full usernames in LDAP from the uid in logs for audit reporting.
+
+saslauthd.conf
+slapd.d
+splunk_uidgecos.py

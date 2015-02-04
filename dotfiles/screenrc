@@ -1,0 +1,21 @@
+term vt100
+defscrollback 5000
+startup_message off
+vbell off
+altscreen on
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d/%Y %{W}%c%{g}]'
+logfile /unixsa/screen/screenlog-%Y%m%d-%c:%s
+
+bind  ! select 11
+bind  @ select 12
+bind \# select 13
+bind  $ select 14
+bind  % select 15
+bind \^ select 16
+bind  & select 17
+bind  * select 18
+bind  ( select 19
+bind  ) select 10
+
+shell -$SHELL

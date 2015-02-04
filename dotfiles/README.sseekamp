@@ -1,0 +1,11 @@
+dotfile
+
+I'm actually not a huge customizer of tools in general. I like to find tools that fit my style and philosophy and do minimal customization if possible.
+
+Bash - I have all the typical admin aliases, but I really enjoy bash completion modules. We use extensive Icinga, ZFS, package managers, etc. This makes it so you don't have to remember every tool's options, but still requires planning for non-interactive purposes.
+
+Screen - I use extensively as a safety mechanism for bad connections and a way to log for sessions for change management or training.
+
+Git - still a newer tool for me as I have extensive SVN material to migrate. Rolling out Puppet has been my main push to Git and I am enjoying it.
+
+SSH - I've included a small sample of the client side SSH configuration. This allows us to configure security settings per host/user/etc and version control the file for ease of deployment and management.

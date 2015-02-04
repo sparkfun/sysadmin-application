@@ -1,0 +1,12 @@
+Host *
+  ForwardAgent yes
+  ForwardX11 no
+  LogLevel=Error
+Host host1 host2 etc
+  Port 2200
+Host host3 host4 etc
+  User backup
+Host sanswitch1 sanswitch2 sanswitch3
+  User admin
+Host mgmtconsole1 mgmtconsole2
+  User mgmtuser
