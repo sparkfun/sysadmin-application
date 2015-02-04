@@ -1,0 +1,32 @@
+What is your desired compensation range? (Range meaning the least you're comfortable with to the most you think you're worth.)
+	This is a difficult question as I've been in a unique position the last few years with my current company. I'm straddling an architect/management position and therefore am probably being paid over-market for Colorado admin positions. I'm looking for a place to work that I enjoy going to again and for the right one I will make things work.
+
+When can you start?
+	Flexible. 
+
+Do you have any planned vacations/absences in the next six months that we should know about?
+	I have a new addition to the family coming in April and was planning to take off a week or two to help out at home.
+
+SparkFun is a dog-friendly environment. Are comfortable working aroung dogs? If you are a dog-owner, would you see yourself bringing a dog to work?
+	Absolutely - dogs are great! We are pet-less at the moment, but have plans in the next few years.
+
+The active sysadmin keeps up on happenings in the world of development and technology. Where do you you get your news?
+	I have a rotating RSS reader list, but typically the long term sites are:
+		theregister.co.uk (How can you not like the BOFH + British tech news?)
+		slashdot.org (Not as good as it used to be, but I do have a low UID!)
+		engadget.com (Keep up with gadgetry in the world)
+		arstechnica (Solid technology articles)
+
+	I follow a number of blogs and my Google+ account is filled with tech groups and people.
+
+	I also listen to a few tech related podcasts when I get the chance.
+		Jupiter Broadcasting
+		Seminars about Long-term Thinking
+
+	I have an O'Reilly Safari bookshelf membership that I use to keep current on publications.
+		
+The sane sysadmin does things other than managing systems. What else occupies your time?
+	As a Colorado native I like to enjoy the outdoors. I like to hike, mountain bike, and take Jeep trips. I am taking classes in cooking and welding (separately of course).
+
+The worldly sysadmin is in touch with some form of culture (books, music, film, etc.). How do you go about feeding this part of your brain?
+	I love to read when I get free time. Primarily sci-fi (yes stereotypical IT person), but I also enjoy more traditional fiction and non-fiction such as Cosmology/Physics, mysteries, and historical categories.

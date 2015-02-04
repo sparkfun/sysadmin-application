@@ -1,0 +1,34 @@
+[user]
+        name = Scott Seekamp
+        email = sseekamp@risei.net
+
+[alias]
+        co = checkout
+        ci = commit
+        st = status
+        br = branch
+        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+        type = cat-file -t
+        dump = cat-file -p
+[core]
+        autocrlf = input
+        editor = vi
+
+[color]
+        ui = true
+
+[color "branch"]
+        current = yellow reverse
+        local = yello
+        remote = green
+
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = red

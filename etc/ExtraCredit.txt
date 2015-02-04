@@ -1,0 +1,53 @@
+    EXTRA CREDIT QUESTIONS
+    
+      - You have a Linux server, remotely accessed over SSH.  Your user is a
+        sudoer.  You have ten minutes to do as much damage as you can manage
+        to the system before the machine loses power.  What steps do you take?
+
+		Assuming you are going for pure damage and not information gathering, I would either:
+
+		rm -rf /* (to avoid the safety checks on newer Linux installs)
+
+		Determine disk (or any block) devices.
+		Run dd if=/dev/urandom of=/dev/sdX for all the devices are you want to make difficult to recover.
+
+		Install systemd and reboot (I kid, I kid)
+    
+      - What are your three favorite acronyms?
+
+		NSA, CIA, FBI (they're listening - don't upset them!)
+    
+      - Draw us a piece of ASCII art from scratch.
+
+		O|||||||O
+
+		That's my Jeep from the front :)
+    
+      - Do you currently have a registered nickname on freenode?
+		
+		It's been a while - used to have "sylgeist"
+    
+      - What, if any, dialects of BASIC have you learned?
+	
+		I had gwbasic on my first computer!
+    
+      - What is your favorite non-hominid mammal?
+
+		I will go with Bats - fascinating mammals.
+    
+      - Do you have a favorite Usenet troll?
+
+		I'll go with Kibo - creative sense of humor
+    
+      - What is your favorite mnemonic?
+
+		http://xkcd.com/992/
+    
+      - If we had wanted to make this really difficult, how should we have
+        obscured these questions?
+
+		Hash the contents and require <$5 AWS investment in resources to brute force it. Cheap and telling of the candidate's skills.
+    
+      - Stones or Beatles?
+
+		I grew up with Beatles fans and appreciate the music, but I have to say the Stones for the deeper, thought provoking concepts.
