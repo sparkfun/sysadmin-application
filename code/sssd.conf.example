@@ -1,0 +1,98 @@
+[sssd]
+domains = AD
+services = nss, pam, pac, autofs
+config_file_version = 2
+[pam]
+# Add any local users/groups you do not want overridden by the domain.
+filter_users = root, rpc, avahi, tomcat, news, mailman, ldap, radiusd, named, haldaemon, dbus, nscd
+filter_groups = root, wheel, rpc, avahi, tomcat, news, mailman, ldap, radiusd, named, haldaemon, dbus, nscd
+[autofs]
+## Autofs gets it configuration from local files.
+## if you are having issues with autofs mounting, enable the debug_level line and restart sssd.
+## debug_level = 9
+#ldap_autofs_search_base
+#ldap_autofs_map_object_class
+#ldap_autofs_map_name
+#ldap_autofs_entry_object_class
+#ldap_autofs_entry_key
+#ldap_autofs_entry_value
+[nss]
+## nss gets its configuration from local files.
+## if you are having issues with nss, enable the debug_level line and restart sssd.
+## debug_level = 5
+[domain / AD]
+description = AD Domains
+# Enabling enumerate will cause the systems to query AD more than necessary resulting in lockups.
+enumerate = false
+## at the time of writing this is required to make AD connections work across all AD servers.
+ad_server = lawman.uwyo.edu, hombre.uwyo.edu, renegade.uwyo.edu, ranger.uwyo.edu
+ad_domain = windows.uwyo.edu
+## THIS IS REQURED! It must be set to the shorthostname of your server. (Everything but the .uwyo.edu)
+ad_hostname = lrl
+# Add any local users/groups you do not want overridden by the domain.
+filter_users = root, rpc, avahi, tomcat, news, mailman, ldap, radiusd, named, haldaemon, dbus, nscd
+filter_groups = root, rpc, avahi, tomcat, news, mailman, ldap, radiusd, named, haldaemon, dbus, nscd
+# Debug Level
+debug_level = 0x0080
+# Provider Properties
+id_provider = ad
+auth_provider = krb5
+# GC is readonly, so disabling this option. (cannot change user passwords from a linux server).
+chpass_provider = krb5
+access_provider = ad
+krb5_realm = WINDOWS.UWYO.EDU
+krb5_canonicalize = false
+krb5_use_enterprise_principal = true
+krb5_server = windows.uwyo.edu
+# Schema Setup
+ldap_schema = ad
+ldap_user_name = sAMAccountName
+ldap_group_object_class = group
+case_sensitive = false
+ldap_id_mapping = False
+ldap_user_objectsid = objectSid
+# Override user’s default shell (optional)
+default_shell = /bin/bash
+override_homedir = /home/guests/%u
+# Changes to make sssd work better with AD.
+ldap_user_principal = userPrincipalName
+ldap_user_fullname = displayName
+ldap_user_object_class = user
+ldap_user_home_directory = unixHomeDirectory
+ldap_user_shell = loginShell
+ldap_force_upper_case_realm = True
+# Turn on caching incase we cant reach the AD servers.
+cache_credentials = True
+dyndns_update = False
+ad_gpo_access_control = disabled
+ldap_sasl_mech = GSSAPI
+ldap_user_gid_number = gidNumber
+ldap_user_uid_number = uidNumber
+ldap_group_name = cn
+ldap_group_member = member
+# KRB5 changes to make AD work better.
+krb5_renew_interval = 10800
+# cache option
+krb5_store_password_if_offline = true
+# Connection Properties
+ldap_uri = ldaps://lawman.uwyo.edu, ldaps://hombre.uwyo.edu, ldaps://ranger.uwyo.edu, ldaps://renegade.uwyo.edu
+#ldap_uri = ldap://lawman.uwyo.edu, ldap://hombre.uwyo.edu, ldap://ranger.uwyo.edu, ldap://renegade.uwyo.edu
+# Force check to make sure the certificate used for ldaps is valid
+ldap_tls_reqcert = demand
+# Search starts at the base of the domain. This is due to users being in odd groups or locations. This can be narrowed down if you only want the system to search specific locations of AD.
+ldap_search_base = DC=windows,DC=uwyo,DC=edu
+ldap_group_search_base = DC=windows,DC=uwyo,DC=edu
+# Define ldap lookup user. Can be different for different groups.
+# Search base set to only look in the Restricted Access OU to speed up lookups (sa accounts).
+ldap_user_search_base = CN=Users, DC=windows, DC=uwyo, DC=edu???OU=Restricted Access,OU=AdminGROUPS,DC=windows,DC=uwyo,DC=edu??
+# Replace CN=xxxx with the full location of the user's distinguishedName in AD.
+ldap_default_bind_dn = CN=linux_auth, OU=Accounts, OU=Dept-Services, OU=Projects, DC=windows, DC=uwyo, DC=edu
+ldap_default_authtok_type = password
+ldap_default_authtok = ################################### 
+ldap_idmap_range_min = 100000
+## Below option might break some lookup's
+ldap_idmap_range_max = 2000100000
+ldap_idmap_range_size = 2000000000
+# Define groups allowed to ssh into this system.
+## In this example SAInfrastructure Is allowed to SSH this server.
+ldap_access_filter=(&(objectClass=person)|"(memberOf=CN=Enrolled Students,OU=Restricted Access,OU=AdminGROUPS,DC=windows,DC=uwyo,DC=edu)(memberOf=CN=UW Staff,OU=Restricted Access,OU=AdminGROUPS,DC=windows,DC=uwyo,DC=edu)(memberOf=CN=Domain Admins,OU=Restricted Access,OU=AdminGROUPS,DC=windows,DC=uwyo,DC=edu)")
