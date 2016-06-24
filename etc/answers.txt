@@ -1,0 +1,41 @@
+Please answer the following general questions:
+
+What is your desired compensation range? (Range meaning the least you're comfortable with to the most you think you're worth.)
+<answer:1>
+$65,000 for the area.  How much am I worth close to 90,000.
+</answer:1>
+
+When can you start?
+<answer:2>
+August, need to finish up a few things and we are taking our vacation to visit family in Arizona and New Mexico.
+</answer:2>
+
+Do you have any planned vacations/absences in the next six months that we should know about?
+<answer:3>
+Usually just take vacation in July and December to visit family, board before the two weeks are up honestly.
+</answer:3>
+
+SparkFun is a dog-friendly environment. Are comfortable working around dogs? If you are a dog-owner, would you see yourself bringing a dog to work?
+<answer:4>
+Currently don't own a dog, but I don't mind them, might sneak treats to them once in a while.
+</answer:4>
+
+The active sysadmin keeps up on happenings in the world of development and technology. Where do you get your news?
+<answer:5>
+Some times Zdnet is a good start on things IT, however I have my trusty Linux Journal,
+and google is pretty good for topics I'm interested in, and lots of forums.  Once in a while I'll peak
+at Make Magazine, get some idea off of Ben Heck, and EEVblog off of YouTube.  Once in a great while when I
+can find it the 2600 Hackers Quarterly.  Sometimes even Slashdot, and Redit.
+</answer:5>
+
+The sane sysadmin does things other than managing systems. What else occupies your time?
+<answer:6>
+Ham Radio, gamming, tinkering, offroading, hiking, cooking.
+</answer:6>
+
+The worldly sysadmin is in touch with some form of culture (books, music, film, etc.). How do you go about feeding this part of your brain?
+<answer:7>
+Having friends of numerous cultures (one of the benefits to working at a University), visiting museums of all sorts.
+Spanish market, which is one of the reasons why we go to New Mexico in the summer, to help family.
+Trying ethnic food and coming out of your comfort zone.
+</answer:7>
