@@ -1,0 +1,14 @@
+[Unit]
+Description=Oracle Database(s)
+Requires=network.target
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=oracle
+Group=dba
+ExecStart=/opt/oracle/app/product/12102/db_1/bin/dbstart /opt/oracle/app/product/12102/db_1
+ExecStop=/opt/oracle/app/product/12102/db_1/bin/dbstop /opt/oracle/app/product/12102/db_1
+
+[Install]
+WantedBy=multi-user.target

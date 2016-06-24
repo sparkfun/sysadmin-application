@@ -1,0 +1,133 @@
+#!/bin/bash
+#Script made by Luke Wood
+#Computer Support Specialist 
+#University of Wyoming
+#September 2, 2011
+#This script is property of the University of Wyoming
+
+#Vars that can be changed for future scripts.
+#IMAGE_DIR=/mnt/payload
+HDD_DIR=/mnt/harddrive
+IMAGE_PATH=/cdrom
+#IMAGE_PATH=/export/images
+IMAGE=rh00242-ubuntu-10.04-fa2011-image.tar.gz
+LAB_NAME=RH00242-LNX-
+SERVER_NAME=RH00242-LNX-0IN
+#UUIDs for root and swap, should be changed  to dynamic later on
+UUID_ROOT="UUID=22ff76db-7056-47c1-b4e0-e3018976eb44"
+UUID_SWAP="UUID=e0a4e1f7-13fb-4181-98fc-d8babeaa3cec"
+
+#Get basic information for the installation.
+echo "This is a Ross Hall 242 installation script:"
+#Brings up network
+#echo "Bringing up Network"
+#dhcpcd eth0
+#Detects server ip for RH00242-LNX-0IN
+echo "Decting IP address for $SERVER_NAME"
+SERVER=$(host $SERVER_NAME | awk '{print $4}')
+echo $SERVER
+#Tests to see if server is alive and nfs is open
+netcat -zv $SERVER nfs
+if [$? -ne 0]
+then
+	echo "Server $SERVER_NAME is not alive, can't confirm IP address!"
+	read -p "Please enter $SERVER_NAME's address: " SERVER
+else
+	echo "$SERVER_NAME is alive and verified, no intervention need.  Keep going!"
+fi
+read -p "Enter machine number (example: 001): " HOSTNAME
+FULL_NAME="$LAB_NAME$HOSTNAME"
+read -p "($FULL_NAME) Is this correct? (y/n):" YES_NO
+case $YES_NO in
+[yY] | [yY][eE][sS] )
+#Start of actual work
+echo "Starting image process please wait."
+echo "Disk is being partitioned."
+#Partitioning and creating filesystem starts here.
+SIZE_OF_DRIVE=$(parted -s /dev/sda unit MB print | grep "^Disk /dev/sda:" | cut -f 3 -d " " | tr -d MB)
+CURRENT_PARTS=$(parted -s /dev/sda print|awk '/^ / {print $1}') 
+SWAP_SIZE=$(($SIZE_OF_DRIVE-8000))
+#Deletes partitions
+for i in $CURRENT_PARTS
+do
+	parted -s /dev/sda rm $i
+	echo "$i clearing partition"
+done
+if [$? -ne 0]
+then
+	echo "Don't worry about the error that posted, it is normal"
+	echo "Removed partitions, moving on!"
+else
+	echo "Removed partions, moving on!"
+fi
+	
+#Creates new partitions   
+parted -s /dev/sda mkpart primary 1MB $SWAP_SIZE
+parted -s /dev/sda set 1 boot on
+parted -s /dev/sda mkpart extended $(($SWAP_SIZE + 1)) $SIZE_OF_DRIVE
+parted -s /dev/sda mkpart logical $(($SWAP_SIZE + 2)) $(($SIZE_OF_DRIVE - 1))
+mkfs.ext4 /dev/sda1
+mkswap /dev/sda5
+#Mounts creats folder and mounts share where tarball is stored.
+echo"Creating temp directories and mount them so we can decompress the image."
+#mkdir $IMAGE_DIR
+#mount -t nfs $SERVER:$IMAGE_PATH $IMAGE_DIR
+mkdir $HDD_DIR
+mount -t ext4 /dev/sda1 $HDD_DIR
+tar --preserve -xvf $IMAGE_PATH/$IMAGE -C $HDD_DIR
+#Adding Directories that are missing
+mkdir -p $HDD_DIR/{home,tmp,dev,mnt,sys,media,proc}
+#Get UUID for hard drive and place into /etc/fstab file.
+ROOT_DRIVE_ID=$(blkid /dev/sda1 | awk '{print $2}'| tr "\"" " " | tr -d " ")
+SWAP_DRIVE_ID=$(blkid /dev/sda5 | awk '{print $2}'| tr "\"" " " | tr -d " ")
+#This is static for now, should be changed in the future
+cp $HDD_DIR/etc/fstab $HDD_DIR/tmp/fstab.old
+eval "sed s/$UUID_ROOT/$ROOT_DRIVE_ID/ < $HDD_DIR/tmp/fstab.old | sed s/$UUID_SWAP/$SWAP_DRIVE_ID/ > $HDD_DIR/etc/fstab"
+rm $HDD_DIR/tmp/fstab.old
+echo "UUIDs should be changed"
+cat $HDD_DIR/etc/fstab
+sleep 5
+#Host name for hostname file
+echo "Rewriting host file to Lab Node Name"
+echo "$FULL_NAME" > $HDD_DIR/etc/hostname
+#Updating yp.conf with new server name
+echo "ypserver $SERVER" > $HDD_DIR/etc/yp.conf
+#Adding Server IP address into hosts file
+#Need to use sed here to add ip address to file and not echo
+#echo "$SERVER	$SERVER_NAME.uwyo.edu $SERVER_NAME" >> /etc/hosts
+echo "Creating /etc/hosts file"
+rm $HDD_DIR/etc/hosts
+echo "127.0.0.1	localhost" > $HDD_DIR/etc/hosts #makes new file, crude, but gets the job done.
+echo "127.0.0.1	$FULL_NAME.uwyo.edu		$FULL_NAME" >> $HDD_DIR/etc/hosts
+echo " " >> /etc/hosts #Leave space for file prettyness
+echo "$SERVER		$SERVER_NAME.uwyo.edu			$SERVER_NAME"	>> $HDD_DIR/etc/hosts
+echo " " >> /etc/hosts
+echo "# The following lines are desirable for IPv6 capable hosts" >> $HDD_DIR/etc/hosts
+echo "::1	localhost	ip6-localhost	ip6-loopback" >> $HDD_DIR/etc/hosts
+echo "fe00::0	ip6-localnet"	>> $HDD_DIR/etc/hosts
+echo "ff00::0	ip6-mcastprefix" >> $HDD_DIR/etc/hosts
+echo "ff02::1	ip6-allnodes"	>> $HDD_DIR/etc/hosts
+echo "ff02::2	ip6-allrouters" >> $HDD_DIR/etc/hosts
+cat $HDD_DIR/etc/hosts
+echo "hosts file complete, if something is wrong please make a note of it."
+#Install grub2 to HDD master boot record
+echo "Installing grub2 (Boot loader) and fixing initramfs"
+mount -t proc proc $HDD_DIR/proc
+mount --rbind /dev $HDD_DIR/dev
+chroot $HDD_DIR/ update-initramfs -u
+chroot $HDD_DIR/ grub-install --root-directory=/ /dev/sda
+chroot $HDD_DIR/ grub-mkconfig -o /boot/grub/grub.cfg
+chroot $HDD_DIR/ touch /*
+chroot $HDD_DIR/ chmod 1777 /tmp
+umount $HDD_DIR/{dev,proc}
+#umount $HDD_DIR
+#Process should now be complete
+echo "Imaging Should be done at this point please reboot."
+exit 0
+;;
+[nN] | [nN][oO] )
+    echo "Aborting, system not correct!"
+    exit 0
+;;
+
+esac

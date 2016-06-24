@@ -1,0 +1,11 @@
+#!/bin/bash
+
+opts="-fstype=cifs,sec=krb5,user=LRL\$,file_mode=0740,dir_mode=0750,uid=&,gid=0,cruid=&,nounix,noserverino,soft"
+
+# We will want to change this from "uwslab admin print quota users" to "enrolled student" after testing
+if [ "$(id $1 | grep -o 'uwslab admin print quota users')" ==  "uwslab admin print quota users" ]; then
+#if [  | grep -q 'uwslab admin print quota users')" ]; then
+        echo  "$opts    ://studentfiles.uwyo.edu/storage\\$/"
+else
+        echo  "$opts    ://warehouse.uwyo.edu/userstorage\\$/"
+fi

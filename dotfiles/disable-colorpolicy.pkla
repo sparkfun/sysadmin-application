@@ -1,0 +1,6 @@
+[Disable shutdown/whatever]
+Identity=unix-user:*
+Action=org.freedesktop.color-manager.create-device;org.freedesktop.color-manager.create-profile;org.freedesktop.color-manager.delete-device;org.freedesktop.color-manager.delete-profile;org.freedesktop.color-manager.device-inhibit;org.freedesktop.color-manager.install-system-wide;org.freedesktop.color-manager.modify-device;org.freedesktop.color-manager.modify-profile;org.freedesktop.color-manager.sensor-lock
+ResultAny=no
+ResultInactive=no
+ResultActive=no
