@@ -1,0 +1,6 @@
+[Disable shutdown]
+Identity=unix-user:*
+Action=org.freedesktop.consolekit.system.stop;org.freedesktop.consolekit.system.restart;org.freedesktop.upower.suspend;org.freedesktop.upower.hibernate
+ResultAny=no
+ResultInactive=no
+ResultActive=no
