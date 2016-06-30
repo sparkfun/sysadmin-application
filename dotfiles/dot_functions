@@ -1,0 +1,77 @@
+
+function ec2ssh
+{
+   ssh -i ~/.ec2/KarlsCloudKeys.pem root@$1.compute-1.amazonaws.com
+}
+
+
+function nd
+{
+   NEWDIR="$1"
+   if  cd "$NEWDIR"   > /dev/null  2>&1
+   then
+      echo "in `pwd`:"
+      if  [ `ls -a  |  wc -w` -eq "2" ]
+      then
+         echo "  {nuthin}"
+      else
+         ls
+      fi
+   else
+      if  [ -f "$NEWDIR" ]
+      then
+         echo "Hey bub ... \"$NEWDIR\"s a file!"
+         echo "'still in `pwd`"
+         return
+      fi
+
+      echo -e "$NEWDIR doesn't exist\nmkdir $NEWDIR?: \c"
+      read RESP
+      if  [ "$RESP" = "y" ]
+      then
+         if  mkdir -p "$NEWDIR"
+         then
+            nd "$NEWDIR"
+         else
+            echo "'still in `pwd`"
+         fi
+      fi
+   fi
+}
+
+
+function psg
+{
+   TMP=/tmp/psg.$$
+
+   ps -eaf  > $TMP
+
+   head -1 $TMP
+   for  ARG in $*
+   do
+      grep -i $ARG $TMP  |  grep -v grep
+   done
+
+   rm -f $TMP
+}
+
+
+function showfunc
+{
+   TMP1=/tmp/sf1.$$
+   TMP2=/tmp/sf2.$$
+
+   echo ""
+   cat ~/.functions ~/.flavors  > $TMP1
+   awk "/^function $1$/,/^\}/" $TMP1  |  tee $TMP2
+   if  [ -s $TMP2 ]
+   then
+      :
+   else
+      echo "function $1 not found in dot-files"
+   fi
+   echo ""
+
+   rm -f $TMP1 $TMP2
+}
+

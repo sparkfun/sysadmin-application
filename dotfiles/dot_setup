@@ -1,0 +1,8 @@
+
+. ~karl/.flavors
+. ~karl/.aliases
+. ~karl/.functions
+
+#. ~karl/.setprompt
+PS1='\e]1;\h\a\h \t \W \$ '
+

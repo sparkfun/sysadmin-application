@@ -1,0 +1,28 @@
+
+function isSolaris
+{
+   UNAME_S=`uname -s`
+   [ "$UNAME_S" = "SunOS" ]  &&  return 0  ||  return 1
+}
+
+
+function isHiP
+{
+   UNAME_S=`uname -s`
+   [ "$UNAME_S" = "HP-UX" ]  &&  return 0  ||  return 1
+}
+
+
+function isLinux
+{
+   UNAME_S=`uname -s`
+   [ "$UNAME_S" = "Linux" ]  &&  return 0  ||  return 1
+}
+
+
+function isDarwin
+{
+   UNAME_S=`uname -s`
+   [ "$UNAME_S" = "Darwin" ]  &&  return 0  ||  return 1
+}
+
