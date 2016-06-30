@@ -1,0 +1,30 @@
+alias aliases='vi ~/.aliases ;  . ~/.aliases'
+alias bashrc='vi ~/.bashrc ;  . ~/.bashrc'
+alias del='stty erase '
+alias e='emacs  &'
+alias encrypt='gpg -e -c $*'
+alias ep='echo "PATH = $PATH"'
+alias funcs='vi ~/.functions ;  . ~/.functions'
+alias ls='/bin/ls -CFG'
+alias more='less'
+alias profile='vi ~/.profile ;  . ~/.profile'
+alias whois='/usr/bin/whois -h geektools.com $*'
+
+alias bluehost='ssh calathus@calathus.org'
+alias dumpster='ssh dumpster'
+alias dysorder='ssh dysorder'
+alias entropee='ssh entropee'
+alias indra='ssh k_hao-s@indra.net'
+alias ubuntu='ssh ubuntu'
+
+alias pingaling='if ping -q -c 1 -t 1 acer  >> /dev/null  2>&1 ; then
+    echo ye ;
+  else
+    echo ne ;
+fi'
+
+alias vmreboot='sudo "/Library/Application Support/VMware Fusion/boot.sh" --restart'
+
+# myec2=54.185.50.99
+alias myec2='ssh -i .ssh/my1stKP.pem ec2-user@myec2'
+
