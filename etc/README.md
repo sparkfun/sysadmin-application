@@ -36,4 +36,4 @@ Please answer the following general questions:
 - Comic books: The Walking Dead, Saga, Invincible, Outcast, Ant-man
 - Movies: All the Marvel movies.
 - Video Games: Zelda, The Last of Us, Okami, Portal
-- TV: [Mr. Robot](http://www.imdb.com/title/tt4158110/) (I hope you've seen it), Game of Thrones, Silicon Valley
+- TV: [Mr. Robot](http://www.imdb.com/title/tt4158110/) (I hope you've seen it), Game of Thrones, Silicon Valley, Archer, Bob's Burgers, Sword Art Online
