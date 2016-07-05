@@ -1,0 +1,7 @@
+---
+- hosts: hp
+  tasks:
+    - name: Replace/Install Repo
+      copy: src=/etc/ansible/files/hp-spp.repo dest=/etc/yum.repos.d/hp-spp.repo owner=root group=root mode=0644 force=yes
+    - name: Yum Clean All/Make sure hp-snmp-agents is installed
+      yum: name=hp-snmp-agents state=installed update_cache=true
