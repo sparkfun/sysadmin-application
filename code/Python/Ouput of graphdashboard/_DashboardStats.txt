@@ -1,0 +1,406 @@
+
+Group > Open Records
+   TIMES RAN: 116
+
+   Average Create SQL   : 36.667 msecs.
+   Average Query  DB    : 10450.6506638 msecs.
+   Average Create XML   : 10.6516206897 msecs.
+   Average Create WHOLE : 10513.0446293 msecs.
+
+   Median Create SQL    : 22.426 msecs.
+   Median Query  DB     : 10398.198 msecs.
+   Median Create XML    : 3.948 msecs.
+   Median Create WHOLE  : 10453.019 msecs.
+
+   Range Create SQL     : 338.272 msecs.
+   Range Query  DB      : 12634.104 msecs.
+   Range Create XML     : 15.034 msecs.
+   Range Create WHOLE   : 13210.557 msecs.
+
+   Highest Create SQL   : 356.932 msecs.
+   Highest Query  DB    : 18886.16 msecs.
+   Highest Create XML   : 15.667 msecs.
+   Highest Create WHOLE : 19484.154 msecs.
+
+   Lowest Create SQL    : 18.66 msecs.
+   Lowest Query  DB     : 6252.056 msecs.
+   Lowest Create XML    : 0.633 msecs.
+   Lowest Create WHOLE  : 6273.597 msecs.
+
+
+Records I Own
+   TIMES RAN: 70
+
+   Average Create SQL   : 31.3143 msecs.
+   Average Query  DB    : 7913.1219 msecs.
+   Average Create XML   : 2.11621428571 msecs.
+   Average Create WHOLE : 7957.3636 msecs.
+
+   Median Create SQL    : 20.797 msecs.
+   Median Query  DB     : 7956.435 msecs.
+   Median Create XML    : 1.369 msecs.
+   Median Create WHOLE  : 7983.231 msecs.
+
+   Range Create SQL     : 116.93 msecs.
+   Range Query  DB      : 7843.019 msecs.
+   Range Create XML     : 0.387 msecs.
+   Range Create WHOLE   : 7974.823 msecs.
+
+   Highest Create SQL   : 122.571 msecs.
+   Highest Query  DB    : 12713.373 msecs.
+   Highest Create XML   : 0.833 msecs.
+   Highest Create WHOLE : 12854.504 msecs.
+
+   Lowest Create SQL    : 5.641 msecs.
+   Lowest Query  DB     : 4870.354 msecs.
+   Lowest Create XML    : 1.22 msecs.
+   Lowest Create WHOLE  : 4879.681 msecs.
+
+
+Issues by Product
+   TIMES RAN: 69
+
+   Average Create SQL   : 42.761115942 msecs.
+   Average Query  DB    : 6175.21608696 msecs.
+   Average Create XML   : 4.82707246377 msecs.
+   Average Create WHOLE : 6259.30536232 msecs.
+
+   Median Create SQL    : 25.184 msecs.
+   Median Query  DB     : 2215.56 msecs.
+   Median Create XML    : 1.446 msecs.
+   Median Create WHOLE  : 2356.324 msecs.
+
+   Range Create SQL     : 110.496 msecs.
+   Range Query  DB      : 17240.38 msecs.
+   Range Create XML     : 1.714 msecs.
+   Range Create WHOLE   : 17821.142 msecs.
+
+   Highest Create SQL   : 131.372 msecs.
+   Highest Query  DB    : 17310.891 msecs.
+   Highest Create XML   : 2.591 msecs.
+   Highest Create WHOLE : 17914.888 msecs.
+
+   Lowest Create SQL    : 20.876 msecs.
+   Lowest Query  DB     : 70.511 msecs.
+   Lowest Create XML    : 0.877 msecs.
+   Lowest Create WHOLE  : 93.746 msecs.
+
+
+SOFs by Product
+   TIMES RAN: 117
+
+   Average Create SQL   : 35.4983504274 msecs.
+   Average Query  DB    : 11212.8039145 msecs.
+   Average Create XML   : 10.9556837607 msecs.
+   Average Create WHOLE : 11293.9081709 msecs.
+
+   Median Create SQL    : 24.183 msecs.
+   Median Query  DB     : 12200.961 msecs.
+   Median Create XML    : 4.417 msecs.
+   Median Create WHOLE  : 12477.938 msecs.
+
+   Range Create SQL     : 39.963 msecs.
+   Range Query  DB      : 47107.233 msecs.
+   Range Create XML     : 3.576 msecs.
+   Range Create WHOLE   : 47072.345 msecs.
+
+   Highest Create SQL   : 6.898 msecs.
+   Highest Query  DB    : 47406.185 msecs.
+   Highest Create XML   : 4.296 msecs.
+   Highest Create WHOLE : 47420.667 msecs.
+
+   Lowest Create SQL    : 46.861 msecs.
+   Lowest Query  DB     : 298.952 msecs.
+   Lowest Create XML    : 0.72 msecs.
+   Lowest Create WHOLE  : 348.322 msecs.
+
+
+Group SOFs by Product
+   TIMES RAN: 134
+
+   Average Create SQL   : 27.6792686567 msecs.
+   Average Query  DB    : 7250.47622388 msecs.
+   Average Create XML   : 6.3086119403 msecs.
+   Average Create WHOLE : 7296.9663209 msecs.
+
+   Median Create SQL    : 20.948 msecs.
+   Median Query  DB     : 7262.684 msecs.
+   Median Create XML    : 1.569 msecs.
+   Median Create WHOLE  : 7282.644 msecs.
+
+   Range Create SQL     : 47.708 msecs.
+   Range Query  DB      : 9724.301 msecs.
+   Range Create XML     : 0.714 msecs.
+   Range Create WHOLE   : 9769.787 msecs.
+
+   Highest Create SQL   : 82.091 msecs.
+   Highest Query  DB    : 11956.908 msecs.
+   Highest Create XML   : 1.238 msecs.
+   Highest Create WHOLE : 12041.776 msecs.
+
+   Lowest Create SQL    : 34.383 msecs.
+   Lowest Query  DB     : 2232.607 msecs.
+   Lowest Create XML    : 1.952 msecs.
+   Lowest Create WHOLE  : 2271.989 msecs.
+
+
+TPs by Product
+   TIMES RAN: 56
+
+   Average Create SQL   : 17.2111428571 msecs.
+   Average Query  DB    : 6433.93141071 msecs.
+   Average Create XML   : 30.7029107143 msecs.
+   Average Create WHOLE : 6497.78796429 msecs.
+
+   Median Create SQL    : 7.511 msecs.
+   Median Query  DB     : 3548.282 msecs.
+   Median Create XML    : 1.194 msecs.
+   Median Create WHOLE  : 3609.338 msecs.
+
+   Range Create SQL     : 26.27 msecs.
+   Range Query  DB      : 18667.79 msecs.
+   Range Create XML     : 176.74 msecs.
+   Range Create WHOLE   : 18871.989 msecs.
+
+   Highest Create SQL   : 28.79 msecs.
+   Highest Query  DB    : 19963.302 msecs.
+   Highest Create XML   : 177.783 msecs.
+   Highest Create WHOLE : 20172.185 msecs.
+
+   Lowest Create SQL    : 2.52 msecs.
+   Lowest Query  DB     : 1295.512 msecs.
+   Lowest Create XML    : 1.043 msecs.
+   Lowest Create WHOLE  : 1300.196 msecs.
+
+
+FA Meeting > SOF
+   TIMES RAN: 11
+
+   Average Create SQL   : 19.0408181818 msecs.
+   Average Query  DB    : 2596.51936364 msecs.
+   Average Create XML   : 40.567 msecs.
+   Average Create WHOLE : 2687.10045455 msecs.
+
+   Median Create SQL    : 18.031 msecs.
+   Median Query  DB     : 2900.369 msecs.
+   Median Create XML    : 43.063 msecs.
+   Median Create WHOLE  : 2976.192 msecs.
+
+   Range Create SQL     : 5.426 msecs.
+   Range Query  DB      : 2628.746 msecs.
+   Range Create XML     : 18.232 msecs.
+   Range Create WHOLE   : 2546.359 msecs.
+
+   Highest Create SQL   : 17.425 msecs.
+   Highest Query  DB    : 3136.123 msecs.
+   Highest Create XML   : 30.04 msecs.
+   Highest Create WHOLE : 3201.498 msecs.
+
+   Lowest Create SQL    : 22.851 msecs.
+   Lowest Query  DB     : 507.377 msecs.
+   Lowest Create XML    : 48.272 msecs.
+   Lowest Create WHOLE  : 655.139 msecs.
+
+
+Issue Class By Product
+   TIMES RAN: 2
+
+   Average Create SQL   : 19.5 msecs.
+   Average Query  DB    : 5123.528 msecs.
+   Average Create XML   : 1.2125 msecs.
+   Average Create WHOLE : 5148.3275 msecs.
+
+   Median Create SQL    : 22.112 msecs.
+   Median Query  DB     : 8354.116 msecs.
+   Median Create XML    : 1.311 msecs.
+   Median Create WHOLE  : 8375.342 msecs.
+
+   Range Create SQL     : 5.224 msecs.
+   Range Query  DB      : 6461.176 msecs.
+   Range Create XML     : 0.197 msecs.
+   Range Create WHOLE   : 6454.029 msecs.
+
+   Highest Create SQL   : 16.888 msecs.
+   Highest Query  DB    : 8354.116 msecs.
+   Highest Create XML   : 1.114 msecs.
+   Highest Create WHOLE : 8375.342 msecs.
+
+   Lowest Create SQL    : 22.112 msecs.
+   Lowest Query  DB     : 1892.94 msecs.
+   Lowest Create XML    : 1.311 msecs.
+   Lowest Create WHOLE  : 1921.313 msecs.
+
+
+Assembly Class By Product
+   TIMES RAN: 2
+
+   Average Create SQL   : 4.703 msecs.
+   Average Query  DB    : 5550.965 msecs.
+   Average Create XML   : 0.5625 msecs.
+   Average Create WHOLE : 5563.15 msecs.
+
+   Median Create SQL    : 6.621 msecs.
+   Median Query  DB     : 5935.861 msecs.
+   Median Create XML    : 0.741 msecs.
+   Median Create WHOLE  : 5947.613 msecs.
+
+   Range Create SQL     : 3.836 msecs.
+   Range Query  DB      : 769.792 msecs.
+   Range Create XML     : 0.357 msecs.
+   Range Create WHOLE   : 768.926 msecs.
+
+   Highest Create SQL   : 6.621 msecs.
+   Highest Query  DB    : 5935.861 msecs.
+   Highest Create XML   : 0.741 msecs.
+   Highest Create WHOLE : 5947.613 msecs.
+
+   Lowest Create SQL    : 2.785 msecs.
+   Lowest Query  DB     : 5166.069 msecs.
+   Lowest Create XML    : 0.384 msecs.
+   Lowest Create WHOLE  : 5178.687 msecs.
+
+
+Cause Class By Product
+   TIMES RAN: 2
+
+   Average Create SQL   : 3.961 msecs.
+   Average Query  DB    : 4609.566 msecs.
+   Average Create XML   : 0.8035 msecs.
+   Average Create WHOLE : 4618.078 msecs.
+
+   Median Create SQL    : 5.367 msecs.
+   Median Query  DB     : 4713.813 msecs.
+   Median Create XML    : 1.143 msecs.
+   Median Create WHOLE  : 4725.038 msecs.
+
+   Range Create SQL     : 2.812 msecs.
+   Range Query  DB      : 208.494 msecs.
+   Range Create XML     : 0.679 msecs.
+   Range Create WHOLE   : 213.92 msecs.
+
+   Highest Create SQL   : 5.367 msecs.
+   Highest Query  DB    : 4713.813 msecs.
+   Highest Create XML   : 1.143 msecs.
+   Highest Create WHOLE : 4725.038 msecs.
+
+   Lowest Create SQL    : 2.555 msecs.
+   Lowest Query  DB     : 4505.319 msecs.
+   Lowest Create XML    : 0.464 msecs.
+   Lowest Create WHOLE  : 4511.118 msecs.
+
+
+Source > SOF
+   TIMES RAN: 29
+
+   Average Create SQL   : 34.1727241379 msecs.
+   Average Query  DB    : 11964.8945862 msecs.
+   Average Create XML   : 10.4233448276 msecs.
+   Average Create WHOLE : 12028.7151379 msecs.
+
+   Median Create SQL    : 21.32 msecs.
+   Median Query  DB     : 12219.363 msecs.
+   Median Create XML    : 6.04 msecs.
+   Median Create WHOLE  : 12262.525 msecs.
+
+   Range Create SQL     : 24.348 msecs.
+   Range Query  DB      : 13327.403 msecs.
+   Range Create XML     : 21.072 msecs.
+   Range Create WHOLE   : 13369.726 msecs.
+
+   Highest Create SQL   : 29.876 msecs.
+   Highest Query  DB    : 15184.256 msecs.
+   Highest Create XML   : 22.256 msecs.
+   Highest Create WHOLE : 15238.168 msecs.
+
+   Lowest Create SQL    : 5.528 msecs.
+   Lowest Query  DB     : 1856.853 msecs.
+   Lowest Create XML    : 1.184 msecs.
+   Lowest Create WHOLE  : 1868.442 msecs.
+
+
+Customer > RMA
+   TIMES RAN: 25
+
+   Average Create SQL   : 4.6316 msecs.
+   Average Query  DB    : 10949.43612 msecs.
+   Average Create XML   : 6.35256 msecs.
+   Average Create WHOLE : 10963.38532 msecs.
+
+   Median Create SQL    : 3.721 msecs.
+   Median Query  DB     : 11644.096 msecs.
+   Median Create XML    : 2.368 msecs.
+   Median Create WHOLE  : 11656.863 msecs.
+
+   Range Create SQL     : 1.843 msecs.
+   Range Query  DB      : 12320.901 msecs.
+   Range Create XML     : 3.806 msecs.
+   Range Create WHOLE   : 12319.689 msecs.
+
+   Highest Create SQL   : 3.721 msecs.
+   Highest Query  DB    : 14128.406 msecs.
+   Highest Create XML   : 5.822 msecs.
+   Highest Create WHOLE : 14140.003 msecs.
+
+   Lowest Create SQL    : 5.564 msecs.
+   Lowest Query  DB     : 1807.505 msecs.
+   Lowest Create XML    : 2.016 msecs.
+   Lowest Create WHOLE  : 1820.314 msecs.
+
+
+CAPAs by Customer
+   TIMES RAN: 31
+
+   Average Create SQL   : 18.3468387097 msecs.
+   Average Query  DB    : 8212.77483871 msecs.
+   Average Create XML   : 2.05561290323 msecs.
+   Average Create WHOLE : 8237.4893871 msecs.
+
+   Median Create SQL    : 16.393 msecs.
+   Median Query  DB     : 8675.493 msecs.
+   Median Create XML    : 1.336 msecs.
+   Median Create WHOLE  : 8688.547 msecs.
+
+   Range Create SQL     : 95.575 msecs.
+   Range Query  DB      : 9190.379 msecs.
+   Range Create XML     : 0.034 msecs.
+   Range Create WHOLE   : 9288.214 msecs.
+
+   Highest Create SQL   : 111.942 msecs.
+   Highest Query  DB    : 12321.941 msecs.
+   Highest Create XML   : 1.011 msecs.
+   Highest Create WHOLE : 12438.671 msecs.
+
+   Lowest Create SQL    : 16.367 msecs.
+   Lowest Query  DB     : 3131.562 msecs.
+   Lowest Create XML    : 1.045 msecs.
+   Lowest Create WHOLE  : 3150.457 msecs.
+
+
+My Open Records
+   TIMES RAN: 80
+
+   Average Create SQL   : 33.03325 msecs.
+   Average Query  DB    : 11857.460175 msecs.
+   Average Create XML   : 55.042775 msecs.
+   Average Create WHOLE : 11972.3641625 msecs.
+
+   Median Create SQL    : 20.946 msecs.
+   Median Query  DB     : 10333.761 msecs.
+   Median Create XML    : 40.418 msecs.
+   Median Create WHOLE  : 10381.128 msecs.
+
+   Range Create SQL     : 85.201 msecs.
+   Range Query  DB      : 14679.708 msecs.
+   Range Create XML     : 26.785 msecs.
+   Range Create WHOLE   : 15224.923 msecs.
+
+   Highest Create SQL   : 102.58 msecs.
+   Highest Query  DB    : 20646.518 msecs.
+   Highest Create XML   : 29.959 msecs.
+   Highest Create WHOLE : 21214.03 msecs.
+
+   Lowest Create SQL    : 17.379 msecs.
+   Lowest Query  DB     : 5966.81 msecs.
+   Lowest Create XML    : 3.174 msecs.
+   Lowest Create WHOLE  : 5989.107 msecs.
+

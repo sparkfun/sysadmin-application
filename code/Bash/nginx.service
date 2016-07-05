@@ -1,0 +1,64 @@
+#!/bin/bash
+# chkconfig: 345 70 30
+#
+# /etc/rc.d/init.d/nginx
+#
+# Start Nginx
+# Created by Evan Owen
+#
+
+
+# Source function library.
+. /etc/init.d/functions
+
+RETVAL=0
+prog="nginx"
+LOCKFILE=/var/lock/subsys/$prog
+
+
+
+start() {
+        echo -n "Starting $prog: "
+        /var/cache/nginx/sbin/nginx && success || failure
+        RETVAL=$?
+        [ $RETVAL -eq 0 ] && touch $LOCKFILE
+        echo
+        return $RETVAL
+}
+
+stop() {
+        echo -n "Starting $prog: "
+        /var/cache/nginx/sbin/nginx -s stop && success || failure
+        RETVAL=$?
+        [ $RETVAL -eq 0 ] && rm -f $LOCKFILE
+        echo
+        return $RETVAL
+}
+
+status() {
+        echo -n "Checking $prog status: "
+        cat $LOCKFILE && success || failure
+        RETVAL=$?
+        return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
+exit $RETVAL

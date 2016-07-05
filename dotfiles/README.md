@@ -3,9 +3,9 @@ We observe that the experienced nerd often prefers tools which afford a measure 
 This section may, at your option, contain either:
 
   a) A collection of dotfiles or other configuration from your working environment.
-    b) A rationale for your lack of same.
+  b) A rationale for your lack of same.
 
- **~/.ssh/***  - authorized_keys and known_hosts are great!
+ **~/.ssh/***  - private_keys, authorized_keys, and known_hosts are great!
 
      Not giving up anything in this directory, sorry! ;P
 
@@ -28,8 +28,7 @@ This section may, at your option, contain either:
     export PATH=$PATH:/usr/local/mysql/bin
 
 
- **~/.nanorc** - Syntax highlighting for a ton of languages in nano. (Don't judge me for using nano, I can use vi. I just prefer nano's simplicity. ) Also you can't declare all these files with a wildcard it will break nanorc...
-
+ **~/.nanorc** - Syntax highlighting for a ton of languages in nano. (Don't judge me for using nano, I can use vi. I just prefer nano's simplicity. ) Also you can't declare all these files with a wildcard it will break nanorc... https://github.com/scopatz/nanorc
 
 
 
