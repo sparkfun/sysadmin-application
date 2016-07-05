@@ -11,4 +11,4 @@ This puppet module runs a bash script that is given to you from nagioslogserver.
 
 ## Module Description
 
-init.pp - makes sure a script is there and runs it.
+**init.pp** - makes sure a script is there and runs it.

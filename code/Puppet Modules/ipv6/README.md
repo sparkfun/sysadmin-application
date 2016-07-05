@@ -11,4 +11,4 @@ Changes a postfix file to not use ipv6 since we have it disabled.
 
 ## Module Description
 
-init.pp - uses augeas to change a line in /etc/postfix/main.cf
+**init.pp** - uses augeas to change a line in /etc/postfix/main.cf

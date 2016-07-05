@@ -11,4 +11,4 @@ This Module adds the ciscat (https://benchmarks.cisecurity.org/downloads/audit-t
 
 ## Module Description
 
-init.pp - defines files, scripts, cron jobs, installs java if not already there.
+**init.pp** - defines files, scripts, cron jobs, installs java if not already there.

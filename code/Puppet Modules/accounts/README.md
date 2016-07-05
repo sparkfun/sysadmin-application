@@ -11,6 +11,8 @@ This is the accounts Puppet Module. It creates user accounts and their authorize
 
 ## Module Description
 
-Authorized keys - add keys to user account.
-Virtual - defines a virtual user resource.
-init - creates the users using virtual
+**authorized_keys.pp** - add keys to user account.
+
+**virtual.pp** - defines a virtual user resource.
+
+**init.pp** - creates the users using virtual
